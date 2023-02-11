@@ -1,9 +1,11 @@
 import Logo from "../assets/images/vr-group.svg";
-
-import React from "react";
+import React, { useState } from "react";
 import Button from "./Button";
+import LoginForm from './LoginForm'
 
 const Header = () => {
+  const [showLoginForm, setShowLoginForm] = useState(false);
+
   return (
     <div>
       <header>
@@ -16,14 +18,24 @@ const Header = () => {
               </h1>
             </a>
             <Button
-              onClick={() => console.log("kajhsd")}
+              onClick={() => setShowLoginForm(true)}
               buttonTitle="Log-in"
             />
           </div>
         </div>
+
+        {showLoginForm && (
+          <LoginForm
+            showLoginForm={showLoginForm}
+            setShowLoginForm={setShowLoginForm}
+          />
+        )}
       </header>
     </div>
   );
 };
 
 export default Header;
+
+
+
