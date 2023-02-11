@@ -7,6 +7,7 @@ import Root from "./layout/layout";
 import ErrorPage from "./pages/ErrorPage";
 
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
     children: [],
   },
 ]);
+
+
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
