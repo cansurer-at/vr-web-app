@@ -11,6 +11,9 @@ const Header = () => {
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
             <a href="/" className="flex items-center">
               <img href="/" src={Logo} alt="logo" className="mr-3 h-6 sm:h-9" />
+              <h1 href="/" className="text-primary-text">
+                VR Tech Platform
+              </h1>
             </a>
             <Button
               onClick={() => console.log("kajhsd")}
