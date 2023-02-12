@@ -1,25 +1,21 @@
-import { createSlice, createStore } from "@reduxjs/toolkit";
+import { createStore } from "@reduxjs/toolkit";
+import { rootReducer } from "./rootReducer";
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 
+const persistConfig = {
+  key: "root",
+  storage,
+};
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
+const store = createStore(
+  persistedReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+const persistor = persistStore(store);
 
-const counterSlice = createSlice({
-  name: "counter",
-  initialState: { value: 0 },
-  reducers: {
-    increment: state => {
-      state.value += 1;
-    },
-    decrement: state => {
-      state.value -= 1;
-    }
-  }
-});
-
-export const { increment, decrement } = counterSlice.actions;
-export const counterReducer = counterSlice.reducer;
-
-const store = createStore(counterReducer);
-
-
-
-export default store;
+const getStore = () => {
+  return { persistor, store };
+};
+export default getStore;

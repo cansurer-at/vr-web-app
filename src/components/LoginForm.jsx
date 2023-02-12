@@ -1,9 +1,19 @@
-import React, { useState} from 'react'
-import Button from './Button';
-import RegisterForm from './RegisterForm';
+import React, { useState } from "react";
+import Button from "./Button";
+import RegisterForm from "./RegisterForm";
+import { useDispatch } from "react-redux";
+import { login } from "../pages/reducers/authSlice";
 
 const LoginForm = ({ showLoginForm, setShowLoginForm }) => {
   const [showRegisterForm, setShowRegisterForm] = useState(false);
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(login());
+    alert("Sign in successful!");
+    setShowLoginForm(!showLoginForm)
+  };
 
   if (showRegisterForm) {
     return (
@@ -13,12 +23,12 @@ const LoginForm = ({ showLoginForm, setShowLoginForm }) => {
         showLoginForm={showLoginForm}
         setShowLoginForm={setShowLoginForm}
       />
-    )
+    );
   } else {
     return (
       <div className="fixed  flex justify-center top-0 left-0 right-0 bottom-0 bg-gray-900 bg-opacity-75">
         <div className="m-auto max-w-xs p-8  bg-white rounded-lg shadow-xl">
-          <form className="mx-auto ">
+          <form onSubmit={handleSubmit} className="mx-auto ">
             <div className="flex justify-center space-x-40">
               <h2 className="text-lg font-medium mb-4">Sign In</h2>
               <svg
@@ -84,10 +94,7 @@ const LoginForm = ({ showLoginForm, setShowLoginForm }) => {
               </div>
             </div>
             <div className="mt-6 w-full flex justify-center p-4">
-              <Button
-                onClick={() => console.log("submit")}
-                buttonTitle="Log-in"
-              />
+              <Button buttonTitle="Log-in" />
               <Button
                 buttonTitle="Register"
                 onClick={() => setShowRegisterForm(true)}
@@ -100,4 +107,4 @@ const LoginForm = ({ showLoginForm, setShowLoginForm }) => {
   }
 };
 
-export default LoginForm
+export default LoginForm;

@@ -1,8 +1,8 @@
 import Home from "../pages/Home";
 import { Provider } from "react-redux";
-import store from "../store/store";
+import getStore from "../store/store";
 
-
+const { store } = getStore();
 
 const layout = () => {
   return (
@@ -12,6 +12,6 @@ const layout = () => {
       </Provider>
     </>
   );
-}
+};
 
-export default layout
+export default layout;
