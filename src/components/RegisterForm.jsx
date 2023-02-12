@@ -71,6 +71,8 @@ const RegisterForm = (
               value={email}
               onChange={handleChange}
               required
+              autoComplete="username"
+
             />
           </div>
           <div className="mb-4">
@@ -88,6 +90,7 @@ const RegisterForm = (
               value={password}
               onChange={handleChange}
               required
+              autoComplete="new-password"
             />
           </div>
           <div className="mb-4">
@@ -104,6 +107,7 @@ const RegisterForm = (
               name="passwordConfirm"
               value={passwordConfirm}
               onChange={handleChange}
+              autoComplete="new-password"
               required
             />
           </div>

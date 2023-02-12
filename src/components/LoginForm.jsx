@@ -47,6 +47,7 @@ const LoginForm = ({ showLoginForm, setShowLoginForm }) => {
                   id="email"
                   className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
                   placeholder="Email"
+                  autoComplete="current-password"
                 />
               </div>
             </div>
@@ -63,6 +64,7 @@ const LoginForm = ({ showLoginForm, setShowLoginForm }) => {
                   id="password"
                   className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
                   placeholder="Password"
+                  autoComplete="on"
                 />
               </div>
             </div>
