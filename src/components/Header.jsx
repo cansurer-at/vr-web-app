@@ -19,10 +19,10 @@ const Header = () => {
     <div>
       <header>
         <div className="bg-secondary border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
-          <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+          <div className="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto">
             <a href="/" className="flex items-center">
-              <img href="/" src={Logo} alt="logo" className="mr-3 h-6 sm:h-9" />
-              <h1 href="/" className="text-primary-text">
+              <img href="/" src={Logo} alt="logo" className="h-6 mr-3 sm:h-9" />
+              <h1 href="/" className="text-white">
                 VR Tech Platform
               </h1>
             </a>

@@ -8,7 +8,7 @@ const UserProfile = () => {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row justify-center py-8 lg:mx-10 mx-2">
+      <div className="flex flex-col justify-center py-8 mx-2 md:flex-row lg:mx-10">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -18,33 +18,33 @@ const UserProfile = () => {
             hidden: { opacity: 0, x: -50 },
             visible: { opacity: 1, x: 0 },
           }}
-          className="md:w-1/2 mx-auto mt-10 bg-white rounded-lg p-6"
+          className="p-6 mx-auto mt-10 bg-white rounded-lg md:w-1/2"
         >
           <img
             src={userData.picture.thumbnail}
             alt={userData.name.first + " " + userData.name.last + " Thumbnail"}
-            className="w-32 h-32 rounded-full object-cover mb-4 md:mb-0"
+            className="object-cover w-32 h-32 mb-4 rounded-full md:mb-0"
           />
           <form className="w-full">
-            <label className="block text-gray-700 font-medium mb-2">
+            <label className="block mb-2 font-medium text-gray-700">
               Full Name
             </label>
             <input
               value={userData.name.first + " " + userData.name.last}
               disabled={true}
-              className="w-full p-2 bg-gray-200 rounded-lg focus:outline-none focus:shadow-outline mb-4"
+              className="w-full p-2 mb-4 bg-gray-200 rounded-lg focus:outline-none focus:shadow-outline"
             ></input>
 
-            <label className="block text-gray-700 font-medium mb-2">
+            <label className="block mb-2 font-medium text-gray-700">
               Email
             </label>
             <input
               value={userData.email}
               disabled={true}
-              className="w-full p-2 bg-gray-200 rounded-lg focus:outline-none focus:shadow-outline mb-4"
+              className="w-full p-2 mb-4 bg-gray-200 rounded-lg focus:outline-none focus:shadow-outline"
             ></input>
 
-            <label className="block text-gray-700 font-medium mb-2">
+            <label className="block mb-2 font-medium text-gray-700">
               Phone
             </label>
             <input
@@ -63,7 +63,7 @@ const UserProfile = () => {
             hidden: { opacity: 0, y: 50 },
             visible: { opacity: 1, y: 0 },
           }}
-          className=" mt-10 md:ml-8 md:w-1/2"
+          className="mt-10 md:ml-8 md:w-1/2"
         >
           <video
             className="rounded-lg"
@@ -75,7 +75,7 @@ const UserProfile = () => {
           ></video>
         </motion.div>
       </div>
-      <h1 className="text-3xl font-bold text-center mt-10">
+      <h1 className="mt-10 mb-20 text-3xl font-bold text-center">
         DISCOVER THE FEATURE
       </h1>
     </>
