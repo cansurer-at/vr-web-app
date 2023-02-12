@@ -5,10 +5,10 @@ import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./layout/layout";
 import ErrorPage from "./pages/ErrorPage";
-import UserSettings from "./pages/UserSettings";
 import Home from "./pages/Home";
 import getStore from "./store/store";
 import { Provider } from "react-redux";
+import UserProfile from "./pages/UserProfile";
 
 const { store } = getStore();
 
@@ -23,8 +23,8 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/user-settings",
-        element: <UserSettings />,
+        path: "/user-profile",
+        element: <UserProfile />,
       },
     ],
   },

@@ -4,7 +4,7 @@ import Button from "./Button";
 import LoginForm from "./LoginForm";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../pages/reducers/authSlice";
-import Nav from "./nav/Nav";
+import BottomNav from "./BottomNav/BottomNav";
 const Header = () => {
   const [showLoginForm, setShowLoginForm] = useState(false);
   const isLoggedIn = useSelector((state) => state.authReducer.isLoggedIn);
@@ -26,7 +26,9 @@ const Header = () => {
               </h1>
             </a>
             <Button
-              onClick={() => (isLoggedIn ? logoutFunc() : setShowLoginForm(true))}
+              onClick={() =>
+                isLoggedIn ? logoutFunc() : setShowLoginForm(true)
+              }
               buttonTitle={isLoggedIn ? "Log-out" : "Log-in"}
             />
           </div>
@@ -39,9 +41,7 @@ const Header = () => {
           />
         )}
       </header>
-      <nav>
-        <Nav/>
-      </nav>
+      <BottomNav />
     </div>
   );
 };
