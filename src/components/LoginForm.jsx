@@ -3,6 +3,7 @@ import Button from "./Button";
 import RegisterForm from "./RegisterForm";
 import { useDispatch } from "react-redux";
 import { login } from "../pages/reducers/authSlice";
+import { getUser } from "../service/getUser";
 
 const LoginForm = ({ showLoginForm, setShowLoginForm }) => {
   const [showRegisterForm, setShowRegisterForm] = useState(false);
@@ -12,7 +13,8 @@ const LoginForm = ({ showLoginForm, setShowLoginForm }) => {
     e.preventDefault();
     dispatch(login());
     alert("Sign in successful!");
-    setShowLoginForm(!showLoginForm)
+    getUser();
+    setShowLoginForm(!showLoginForm);
   };
 
   if (showRegisterForm) {
@@ -26,9 +28,9 @@ const LoginForm = ({ showLoginForm, setShowLoginForm }) => {
     );
   } else {
     return (
-      <div className="fixed  flex justify-center top-0 left-0 right-0 bottom-0 bg-gray-900 bg-opacity-75">
+      <div className="fixed z-10  flex justify-center top-0 left-0 right-0 bottom-0 bg-gray-900 bg-opacity-75">
         <div className="m-auto max-w-xs p-8  bg-white rounded-lg shadow-xl">
-          <form onSubmit={handleSubmit} className="mx-auto ">
+          <form onSubmit={handleSubmit} className="mx-auto z-200">
             <div className="flex justify-center space-x-40">
               <h2 className="text-lg font-medium mb-4">Sign In</h2>
               <svg

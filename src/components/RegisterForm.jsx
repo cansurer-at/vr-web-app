@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import Button from "./Button";
 
-const RegisterForm = (
-  {showRegisterForm,
+const RegisterForm = ({
+  showRegisterForm,
   setShowRegisterForm,
   showLoginForm,
-  setShowLoginForm}
-) => {
+  setShowLoginForm,
+}) => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -27,12 +27,12 @@ const RegisterForm = (
     } else {
       console.log(formData);
       setShowRegisterForm(!showRegisterForm);
-      alert('Successfully registered please login')
+      alert("Successfully registered please login");
     }
   };
 
   return (
-    <div className="fixed  flex justify-center top-0 left-0 right-0 bottom-0 bg-gray-900 bg-opacity-75">
+    <div className="fixed z-10  flex justify-center top-0 left-0 right-0 bottom-0 bg-gray-900 bg-opacity-75">
       <div className="fixed inset-0 transition-opacity">
         <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
       </div>
@@ -72,7 +72,6 @@ const RegisterForm = (
               onChange={handleChange}
               required
               autoComplete="username"
-
             />
           </div>
           <div className="mb-4">
@@ -127,6 +126,3 @@ const RegisterForm = (
 };
 
 export default RegisterForm;
-  
-  
-  

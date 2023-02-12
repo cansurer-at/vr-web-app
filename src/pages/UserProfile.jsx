@@ -1,9 +1,19 @@
-import React from 'react'
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 
-const userProfile = () => {
+const UserProfile = () => {
+  const userData = useSelector((state) => state.userReducer.userData);
+
   return (
-    <div>userProfile</div>
-  )
-}
+    <div>
+      <form>
+        <input
+          value={userData.name.first + " " + userData.name.last}
+          disabled={true}
+        ></input>
+      </form>
+    </div>
+  );
+};
 
-export default userProfile
+export default UserProfile;
