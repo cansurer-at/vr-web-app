@@ -1,10 +1,18 @@
 import Logo from "../assets/images/vr-group.svg";
 import React, { useState } from "react";
 import Button from "./Button";
-import LoginForm from './LoginForm'
+import LoginForm from "./LoginForm";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../pages/reducers/authSlice";
 
 const Header = () => {
   const [showLoginForm, setShowLoginForm] = useState(false);
+  const isLoggedIn = useSelector((state) => state.authReducer.isLoggedIn);
+  const dispatch = useDispatch();
+
+  function logoutFunc() {
+    dispatch(logout());
+  }
 
   return (
     <div>
@@ -18,8 +26,8 @@ const Header = () => {
               </h1>
             </a>
             <Button
-              onClick={() => setShowLoginForm(true)}
-              buttonTitle="Log-in"
+              onClick={() => (isLoggedIn ? logoutFunc() : setShowLoginForm(true))}
+              buttonTitle={isLoggedIn ? "Log-out" : "Log-in"}
             />
           </div>
         </div>
@@ -36,6 +44,3 @@ const Header = () => {
 };
 
 export default Header;
-
-
-
