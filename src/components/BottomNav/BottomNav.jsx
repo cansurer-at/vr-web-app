@@ -8,13 +8,27 @@ import { useSelector } from "react-redux";
 const BottomNav = () => {
   const [activeNav, setActiveNav] = useState(window.location.href);
   const isLoggedIn = useSelector((state) => state.authReducer.isLoggedIn);
+  const [showNav, setShowNav] = useState(true);
 
   useEffect(() => {
     setActiveNav(window.location.pathname);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
+  const handleScroll = () => {
+    if (window.pageYOffset + window.innerHeight >= document.body.offsetHeight) {
+      setShowNav(false);
+    } else {
+      setShowNav(true);
+    }
+  };
+
   return (
-    <nav>
+    <nav style={{ display: showNav ? "flex" : "none" }}>
       <a href="/" className={activeNav === "/" ? "active" : ""}>
         <AiOutlineHome />
       </a>
@@ -26,14 +40,13 @@ const BottomNav = () => {
           <AiOutlineUser />
         </a>
       )}
-      {isLoggedIn && (
-        <a
-          href="#experience"
-          className={activeNav === "#experience" ? "active" : ""}
-        >
-          <BiBook />
-        </a>
-      )}
+
+      <a
+        href="content-rich"
+        className={activeNav === "/content-rich" ? "active" : ""}
+      >
+        <BiBook />
+      </a>
     </nav>
   );
 };

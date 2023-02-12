@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import getStore from "./store/store";
 import { Provider } from "react-redux";
 import UserProfile from "./pages/UserProfile";
+import ContentRichPage from "./pages/ContentRichPage";
 
 const { store } = getStore();
 
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/user-profile",
         element: <UserProfile />,
+      },
+      {
+        path: "/content-rich",
+        element: <ContentRichPage />,
       },
     ],
   },
