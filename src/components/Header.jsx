@@ -12,6 +12,7 @@ const Header = () => {
 
   function logoutFunc() {
     dispatch(logout());
+    window.location.href = "/"
   }
 
   return (

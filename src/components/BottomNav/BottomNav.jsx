@@ -3,7 +3,7 @@ import "./bottomNav.css";
 import { AiOutlineHome } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
 import { BiBook } from "react-icons/bi";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const BottomNav = () => {
   const [activeNav, setActiveNav] = useState(window.location.href);
@@ -11,7 +11,7 @@ const BottomNav = () => {
 
   useEffect(() => {
     setActiveNav(window.location.pathname);
-  }, [window.location.href]);
+  }, []);
 
   return (
     <nav>
