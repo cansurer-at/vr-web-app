@@ -1,15 +1,13 @@
 import Home from "../pages/Home";
-import { Provider } from "react-redux";
-import getStore from "../store/store";
-
-const { store } = getStore();
+import UserSettings from "../pages/UserSettings";
+import Header from "../components/Header";
+import { Outlet } from "react-router-dom";
 
 const layout = () => {
   return (
     <>
-      <Provider store={store}>
-        <Home />
-      </Provider>
+      <Header />
+      <Outlet></Outlet>
     </>
   );
 };
