@@ -2,7 +2,7 @@ import React from "react";
 
 const RandomMap = () => {
   return (
-    <div>
+    <div className="mt-4">
       <iframe
         title="Office Address which 10 mins ride to me"
         className="w-full "

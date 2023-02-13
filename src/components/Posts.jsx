@@ -55,11 +55,13 @@ const Posts = () => {
                   ? card.body
                   : `${card.body.substring(0, 55)}...`}
               </p>
-              <Button
-                className="px-4 py-2"
-                onClick={() => toggleFullBody(index)}
-                buttonTitle={showFullBody[index] ? "Show Less" : "Show More"}
-              ></Button>
+              <div className="mt-4">
+                <Button
+                  className="px-4 py-2 "
+                  onClick={() => toggleFullBody(index)}
+                  buttonTitle={showFullBody[index] ? "Show Less" : "Show More"}
+                ></Button>
+              </div>
             </>
           ) : (
             <p className="text-base text-gray-700">{card.body}</p>

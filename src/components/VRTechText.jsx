@@ -6,19 +6,22 @@ import { motion } from "framer-motion";
 const VRTechText = () => {
   return (
     <motion.div
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true, amount: 0.8 }}
-    transition={{ duration: 1 }}
-    variants={{
-      hidden: { opacity: 0, x: 50 },
-      visible: { opacity: 1, x: 0 },
-    }}
-  >
-    <section className="flex flex-row mx-4">
-     
-        <img className="w-1/2 p-8" src={VRText} alt="man wearing VR glass" />
-        <div className="w-1/2">
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.8 }}
+      transition={{ duration: 1 }}
+      variants={{
+        hidden: { opacity: 0, x: 50 },
+        visible: { opacity: 1, x: 0 },
+      }}
+    >
+      <section className="flex flex-col mx-4 md:flex-row">
+        <img
+          className="w-full p-8 md:w-1/2"
+          src={VRText}
+          alt="man wearing VR glass"
+        />
+        <div className="w-full md:w-1/2">
           <h2 class="text-xl font-bold p-8 ">Why VR is Important? </h2>
           <p class="text-lg">
             Virtual Reality (VR) technology is a rapidly growing field that is
@@ -66,9 +69,8 @@ const VRTechText = () => {
           </ul>
           <p class="text-lg"></p>
         </div>
-    </section>
+      </section>
     </motion.div>
-
   );
 };
 
