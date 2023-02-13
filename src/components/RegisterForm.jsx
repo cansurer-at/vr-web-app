@@ -45,7 +45,7 @@ const RegisterForm = ({ showRegisterForm, setShowRegisterForm }) => {
       <div className="fixed inset-0 transition-opacity">
         <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
       </div>
-      <div className="px-4 pt-5 pb-4 overflow-hidden transition-all transform bg-white rounded-lg shadow-xl sm:max-w-lg sm:w-full">
+      <div className="px-4 pt-5 pb-4 my-24 overflow-hidden transition-all transform bg-white rounded-lg shadow-xl sm:max-w-lg sm:w-full">
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <div className="flex justify-center md:space-x-96 lg:space-x-30">
