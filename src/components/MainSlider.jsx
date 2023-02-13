@@ -29,15 +29,6 @@ export default function MainSlider() {
               src={IMGSecondary}
               alt="main slider vr"
             ></img>
-            <h1 className=" text-gray-100 bold absolute z-10 hidden text-5xl lg:flex top-16 pl-[60rem] right-40">
-              Lorem ipsum dolor sit amet
-            </h1>
-            <p className="absolute text-gray-100  z-10 hidden text-3xl md:text-2xl  lg:flex md:top-44 top-36 md:pl-[60rem] pl-[65rem] right-35">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              elit est, pellentesque sit amet nunc efficitur, consequat eleifend
-              massa. Mauris pulvinar, enim in varius elementum, magna nunc
-              placerat enim, quis bibendum quam ipsum eu odio. Proin rhoncus
-            </p>
           </div>
           <div>
             <img
