@@ -28,11 +28,11 @@ const LoginForm = ({ showLoginForm, setShowLoginForm }) => {
     );
   } else {
     return (
-      <div className="fixed z-10  flex justify-center top-0 left-0 right-0 bottom-0 bg-gray-900 bg-opacity-75">
-        <div className="m-auto max-w-xs p-8  bg-white rounded-lg shadow-xl">
+      <div className="fixed top-0 bottom-0 left-0 right-0 z-10 flex justify-center bg-gray-900 bg-opacity-75">
+        <div className="max-w-xs p-8 m-auto bg-white rounded-lg shadow-xl">
           <form onSubmit={handleSubmit} className="mx-auto z-200">
             <div className="flex justify-center space-x-40">
-              <h2 className="text-lg font-medium mb-4">Sign In</h2>
+              <h2 className="mb-4 text-lg font-medium">Sign In</h2>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -50,14 +50,15 @@ const LoginForm = ({ showLoginForm, setShowLoginForm }) => {
               </svg>
             </div>
             <div className="mb-4">
-              <label htmlFor="email" className="block text-sm font-medium mb-2">
+              <label htmlFor="email" className="block mb-2 text-sm font-medium">
                 Email
               </label>
               <div className="relative">
                 <input
+                  maxLength={100}
                   type="email"
                   id="email"
-                  className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+                  className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
                   placeholder="Email"
                   autoComplete="current-password"
                 />
@@ -66,36 +67,37 @@ const LoginForm = ({ showLoginForm, setShowLoginForm }) => {
             <div className="mb-6">
               <label
                 htmlFor="password"
-                className="block text-sm font-medium mb-2"
+                className="block mb-2 text-sm font-medium"
               >
                 Password
               </label>
               <div className="relative">
                 <input
                   type="password"
+                  maxLength={20}
                   id="password"
-                  className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+                  className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
                   placeholder="Password"
                   autoComplete="on"
                 />
               </div>
             </div>
-            <div className="mt-6 flex items-center justify-between">
+            <div className="flex items-center justify-between mt-6">
               <div className="flex items-center">
                 <input
                   id="remember_me"
                   type="checkbox"
-                  className="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
+                  className="w-4 h-4 text-indigo-600 transition duration-150 ease-in-out form-checkbox"
                 />
                 <label
                   htmlFor="remember_me"
-                  className="ml-2 block text-sm leading-5 text-gray-900"
+                  className="block ml-2 text-sm leading-5 text-gray-900"
                 >
                   Remember me
                 </label>
               </div>
             </div>
-            <div className="mt-6 w-full flex justify-center p-4">
+            <div className="flex justify-center w-full p-4 mt-6">
               <Button buttonTitle="Log-in" />
               <Button
                 buttonTitle="Register"

@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import Button from "./Button";
 
-const RegisterForm = ({
-  showRegisterForm,
-  setShowRegisterForm,
-  showLoginForm,
-  setShowLoginForm,
-}) => {
+const RegisterForm = ({ showRegisterForm, setShowRegisterForm }) => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -22,13 +17,27 @@ const RegisterForm = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (password !== passwordConfirm) {
-      setErr("Passwords do not match!");
-    } else {
-      console.log(formData);
-      setShowRegisterForm(!showRegisterForm);
-      alert("Successfully registered please login");
+    const emailRegex =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const passwordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,20})/;
+
+    if (!emailRegex.test(email)) {
+      setErr("Invalid email format!");
+      return;
+    } else if (!passwordRegex.test(password)) {
+      setErr(
+        "The password must contain at least one lowercase letter, one uppercase letter, one digit, one special character (!@#$%^&*) and the length must be between 8 and 20 characters inclusive."
+      );
+      return;
+    } else if (password !== passwordConfirm) {
+      setErr("The passwords do not match.");
+      return;
     }
+
+    console.log(formData);
+    setShowRegisterForm(!showRegisterForm);
+    alert("Successfully registered, please login");
   };
 
   return (
@@ -72,6 +81,7 @@ const RegisterForm = ({
               onChange={handleChange}
               required
               autoComplete="username"
+              maxLength={100}
             />
           </div>
           <div className="mb-4">
@@ -85,6 +95,7 @@ const RegisterForm = ({
               className="w-full px-3 py-2 text-gray-700 bg-gray-200 rounded-lg focus:outline-none focus:shadow-outline"
               id="password"
               type="password"
+              maxLength={20}
               name="password"
               value={password}
               onChange={handleChange}
@@ -104,6 +115,7 @@ const RegisterForm = ({
               id="passwordConfirm"
               type="password"
               name="passwordConfirm"
+              maxLength={20}
               value={passwordConfirm}
               onChange={handleChange}
               autoComplete="new-password"
