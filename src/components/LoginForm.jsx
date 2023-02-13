@@ -5,15 +5,61 @@ import { useDispatch } from "react-redux";
 import { login } from "../pages/reducers/authSlice";
 import { getUser } from "../service/getUser";
 
+const emailRegex =
+  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const passwordRegex =
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,20})/;
+
 const LoginForm = ({ showLoginForm, setShowLoginForm }) => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
   const [showRegisterForm, setShowRegisterForm] = useState(false);
+  const [errors, setErrors] = useState({});
   const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
+    event.preventDefault();
     dispatch(login());
     getUser();
     setShowLoginForm(!showLoginForm);
+
+    console.log("Login success");
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.email) {
+      newErrors.email = "Email is required";
+    } else if (!emailRegex.test(formData.email)) {
+      newErrors.email = "Invalid email address";
+    }
+
+    if (!formData.password) {
+      newErrors.password = "Password is required";
+    } else if (!passwordRegex.test(formData.password)) {
+      newErrors.password =
+        "Password must be 8-20 characters, including at least one lowercase, one uppercase, one numeric, and one special character";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+    setErrors({});
   };
 
   if (showRegisterForm) {
@@ -54,12 +100,16 @@ const LoginForm = ({ showLoginForm, setShowLoginForm }) => {
               </label>
               <div className="relative">
                 <input
+                  value={formData.email}
+                  onChange={handleChange}
                   maxLength={100}
                   type="email"
                   id="email"
                   className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+                  name="email"
                   placeholder="Email"
-                  autoComplete="current-password"
+                  required
+                  autoComplete="username"
                 />
               </div>
             </div>
@@ -72,12 +122,16 @@ const LoginForm = ({ showLoginForm, setShowLoginForm }) => {
               </label>
               <div className="relative">
                 <input
+                  value={formData.password}
+                  onChange={handleChange}
+                  maxLength={100}
                   type="password"
-                  maxLength={20}
                   id="password"
                   className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+                  name="password"
                   placeholder="Password"
-                  autoComplete="on"
+                  required
+                  autoComplete="current-password"
                 />
               </div>
             </div>
@@ -96,6 +150,9 @@ const LoginForm = ({ showLoginForm, setShowLoginForm }) => {
                 </label>
               </div>
             </div>
+            {errors.password && (
+              <p className="text-red-500">{errors.password}</p>
+            )}
             <div className="flex justify-center w-full p-4 mt-6">
               <Button buttonTitle="Log-in" />
               <Button
