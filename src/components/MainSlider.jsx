@@ -48,7 +48,7 @@ export default function MainSlider() {
           </div>
         </Slider>
         <div
-          className="hidden text-[3rem] text-fifth-color hover:text-sixth-color	 cursor-pointer  absolute top-60 left-5 md:flex"
+          className="hidden text-[3rem] text-fifth-color hover:text-sixth-color	 cursor-pointer  absolute top-1/2 left-5 md:flex"
           onClick={() => {
             if (null !== sliderRef.current) {
               sliderRef.current.slickPrev();
@@ -59,7 +59,7 @@ export default function MainSlider() {
         </div>
 
         <div
-          className="hidden text-[3rem] hover:text-sixth-color	 text-fifth-color	 cursor-pointer  absolute top-60 right-5 md:flex"
+          className="hidden text-[3rem] hover:text-sixth-color	 text-fifth-color	 cursor-pointer  absolute top-1/2 right-5 md:flex"
           onClick={() => {
             if (null !== sliderRef.current) {
               sliderRef.current.slickNext();

@@ -12,7 +12,6 @@ const LoginForm = ({ showLoginForm, setShowLoginForm }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(login());
-    alert("Sign in successful!");
     getUser();
     setShowLoginForm(!showLoginForm);
   };

@@ -37,7 +37,6 @@ const RegisterForm = ({ showRegisterForm, setShowRegisterForm }) => {
 
     console.log(formData);
     setShowRegisterForm(!showRegisterForm);
-    alert("Successfully registered, please login");
   };
 
   return (

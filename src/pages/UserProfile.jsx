@@ -18,15 +18,16 @@ const UserProfile = () => {
             hidden: { opacity: 0, x: -50 },
             visible: { opacity: 1, x: 0 },
           }}
-          className="p-6 mx-auto mt-10 bg-white rounded-lg md:w-1/2"
+          className="p-6 mt-[1rem] bg-white rounded-lg md:w-1/2"
         >
           <img
             src={userData.picture.thumbnail}
             alt={userData.name.first + " " + userData.name.last + " Thumbnail"}
-            className="object-cover w-32 h-32 mb-4 rounded-full md:mb-0"
+            className="object-cover w-32 h-32 mx-auto mb-4 rounded-md md:mb-0"
+            style={{ width: "100px", maxWidth: "100%" }}
           />
           <form className="w-full">
-            <label className="block mb-2 font-medium text-gray-700">
+            <label className="block mt-2 mb-2 font-medium text-gray-700">
               Full Name
             </label>
             <input
