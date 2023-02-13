@@ -22,17 +22,17 @@ const VRTechText = () => {
           alt="man wearing VR glass"
         />
         <div className="w-full md:w-1/2">
-          <h2 class="text-xl font-bold p-8 ">Why VR is Important? </h2>
-          <p class="text-lg">
+          <h2 className="p-8 text-xl font-bold ">Why VR is Important? </h2>
+          <p className="text-lg">
             Virtual Reality (VR) technology is a rapidly growing field that is
             transforming the way we interact with digital content and experience
             the world. There are many reasons why VR is considered important,
             including the following:
           </p>
-          <ul class="list-disc pl-10">
+          <ul className="pl-10 list-disc">
             <li>
-              <h3 class="text-lg font-bold">Immersion</h3>
-              <p class="text-base">
+              <h3 className="text-lg font-bold">Immersion</h3>
+              <p className="text-base">
                 VR provides an incredibly immersive experience, allowing users
                 to feel as if they are truly inside a digital environment. This
                 can be used to create powerful and memorable experiences that
@@ -40,16 +40,16 @@ const VRTechText = () => {
               </p>
             </li>
             <li>
-              <h3 class="text-lg font-bold">Education and Training</h3>
-              <p class="text-base">
+              <h3 className="text-lg font-bold">Education and Training</h3>
+              <p className="text-base">
                 VR is a powerful tool for education and training. It can
                 simulate real-world scenarios, allowing students and trainees to
                 practice and develop skills in a safe, controlled environment.
               </p>
             </li>
             <li>
-              <h3 class="text-lg font-bold">Healthcare</h3>
-              <p class="text-base">
+              <h3 className="text-lg font-bold">Healthcare</h3>
+              <p className="text-base">
                 VR has numerous applications in the healthcare field, including
                 pain management, physical therapy, and mental health treatment.
                 By simulating real-world environments and experiences, VR can
@@ -58,8 +58,8 @@ const VRTechText = () => {
               </p>
             </li>
             <li>
-              <h3 class="text-lg font-bold">Business and Productivity</h3>
-              <p class="text-base">
+              <h3 className="text-lg font-bold">Business and Productivity</h3>
+              <p className="text-base">
                 VR is also having an impact on the business world, helping to
                 increase productivity, collaboration, and creativity. For
                 example, VR can be used for virtual meetings and conferences,
@@ -67,7 +67,7 @@ const VRTechText = () => {
               </p>
             </li>
           </ul>
-          <p class="text-lg"></p>
+          <p className="text-lg"></p>
         </div>
       </section>
     </motion.div>
