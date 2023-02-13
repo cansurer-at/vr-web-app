@@ -13,8 +13,6 @@ const ContentRichPage = () => {
     <>
       <Posts />
       <VRTechText/>
-
-      <RandomMap />
     </>
   );
  

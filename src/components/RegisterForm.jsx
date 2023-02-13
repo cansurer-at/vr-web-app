@@ -32,15 +32,15 @@ const RegisterForm = ({
   };
 
   return (
-    <div className="fixed z-10  flex justify-center top-0 left-0 right-0 bottom-0 bg-gray-900 bg-opacity-75">
+    <div className="fixed top-0 bottom-0 left-0 right-0 z-10 flex justify-center bg-gray-900 bg-opacity-75">
       <div className="fixed inset-0 transition-opacity">
         <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
       </div>
-      <div className="bg-white rounded-lg px-4 pt-5 pb-4 overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
+      <div className="px-4 pt-5 pb-4 overflow-hidden transition-all transform bg-white rounded-lg shadow-xl sm:max-w-lg sm:w-full">
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <div className="flex justify-center md:space-x-96 lg:space-x-30">
-              <h2 className="text-lg font-medium mb-4">Register</h2>
+              <h2 className="mb-4 text-lg font-medium">Register</h2>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -58,7 +58,7 @@ const RegisterForm = ({
               </svg>
             </div>
             <label
-              className="block font-medium mb-2 text-gray-700"
+              className="block mb-2 font-medium text-gray-700"
               htmlFor="email"
             >
               Email
@@ -76,7 +76,7 @@ const RegisterForm = ({
           </div>
           <div className="mb-4">
             <label
-              className="block font-medium mb-2 text-gray-700"
+              className="block mb-2 font-medium text-gray-700"
               htmlFor="password"
             >
               Password
@@ -94,7 +94,7 @@ const RegisterForm = ({
           </div>
           <div className="mb-4">
             <label
-              className="block font-medium mb-2 text-gray-700"
+              className="block mb-2 font-medium text-gray-700"
               htmlFor="passwordConfirm"
             >
               Confirm Password
@@ -116,7 +116,7 @@ const RegisterForm = ({
             </div>
           )}
 
-          <div className="mt-6 w-full flex justify-center p-4">
+          <div className="flex justify-center w-full p-4 mt-6">
             <Button buttonTitle="Register" type="submit"></Button>
           </div>
         </form>

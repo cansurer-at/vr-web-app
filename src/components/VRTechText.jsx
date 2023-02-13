@@ -19,7 +19,7 @@ const VRTechText = () => {
      
         <img className="w-1/2 p-8" src={VRText} alt="man wearing VR glass" />
         <div className="w-1/2">
-          <h2 class="text-xl font-bold p-8 ">Why VR Techs is Important? </h2>
+          <h2 class="text-xl font-bold p-8 ">Why VR is Important? </h2>
           <p class="text-lg">
             Virtual Reality (VR) technology is a rapidly growing field that is
             transforming the way we interact with digital content and experience
