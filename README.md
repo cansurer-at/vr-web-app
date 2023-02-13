@@ -9,7 +9,7 @@ This project also was bootstrapped with [Create React App](https://github.com/fa
 
 ### Demo
 
-:star: [vr-web-test-case.vercel.app](https://vr-web-app-b4pg.vercel.app/) :star:
+:star: [vr-web-test-case.vercel.app](https://vr-web-app.vercel.app/) :star:
 
 <hr />
 
