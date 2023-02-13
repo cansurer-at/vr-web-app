@@ -1,6 +1,5 @@
 import React from 'react';
 import VRText from "../assets/images/VRText.jpeg";
-import { motion } from "framer-motion";
 
 
 const VRTechText = () => {

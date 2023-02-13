@@ -20,8 +20,8 @@ export default function MainSlider() {
   };
 
   return (
-    <div className="relative">
-      <div className="h-screen ">
+    <div className="relative overflow-hidden">
+      <div className="w-full h-screen">
         <Slider ref={sliderRef} {...settings}>
           <div className="relative">
             <img

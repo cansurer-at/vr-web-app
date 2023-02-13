@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# VR Interview Case
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The VR Web app is a simple routing application that includes login and registration functionality. Upon logging in, users will able to see a personal page in the bottom navigator, providing private access.
 
-## Available Scripts
 
-In the project directory, you can run:
+This project also was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### `npm start`
+<hr />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Demo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+:star: [vr-web-test-case.vercel.app](https://vr-web-app-b4pg.vercel.app/) :star:
 
-### `npm test`
+<hr />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Requirements
 
-### `npm run build`
+Node.js >= 12
+npm >= 6
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<hr />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Running the app locally
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To run the app, follow these steps.
 
-### `npm run eject`
+1. From the project folder, execute the following commands:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To install dependencies:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+shell
+  npm i
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To run the app:
 
-## Learn More
+shell
+  npm start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Dependencies
+- Redux: [Redux Toolkit](https://redux-toolkit.js.org/)
+- React.js - A JavaScript library for building user interfaces.
+- Framer-motion - A library for animations in React.
+- React Router DOM - A library for routing in React.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Dependencies
+- Tailwind CSS - A utility-first CSS framework.
